@@ -1,0 +1,27 @@
+{
+  "name": "valor-wallet",
+  "version": "1.0.0",
+  "description": "Valor Wallet System",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "Bello Ridwan",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "bignumber.js": "^9.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "dotenv-expand": "^5.1.0",
+    "express": "^4.17.1",
+    "joi": "^17.4.2",
+    "moment": "^2.29.1",
+    "mongoose": "^5.13.9",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
