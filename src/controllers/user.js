@@ -106,11 +106,17 @@ const checkAvailability = async (req, res) => {
   try {
     // Assuming user is logged in and req.user.id is passed from the Auth middleware
     const id = req.user.id;
-    const { amount, senderId, destinationAddress, asset } = req.body;
+    // Check if driver is not booked
+    const checkDriver = User.findOne({ available: true });
+    if (checkDriver) {
+      return res
+        .status(500)
+        .json({ err: "User not available", status: "failed" });
+    }
 
-    return res
-      .status(200)
-      .json({ msg: "Withdrawal initiated", status: "successful" });
+    // Calculate Fare Price
+
+    return res.status(200).json({ msg: "", status: "successful" });
   } catch (err) {
     console.log(err);
     return res.status(500).json({ err: err.message, status: "failed" });
