@@ -31,7 +31,7 @@ const createPhone = async (req, res) => {
       verifiedPhone: false,
       role: "customer",
       "verifySMSToken.token": otp,
-      "verifyMailToken.expires": Date.now() + 10 * 60 * 1000, // 10 minutes
+      "verifySMSToken.expires": Date.now() + 10 * 60 * 1000, // 10 minutes
     };
     const message = `${otp} is your MEVRON App Verification code. Code expires after 10 minutes`;
     // Send OTP SMS to the user e.g await sendSMS(phone, message);
@@ -62,6 +62,9 @@ const verifyPhone = async (req, res) => {
         status: "failed",
       });
     }
+    user.verifiedPhone = true;
+    user.verifySMSToken = {};
+    user.save();
     return res.status(201).json({
       msg: "SMS OTP Validated successfully",
       data: { user },
