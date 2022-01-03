@@ -51,7 +51,7 @@ Everythig is setup:)
 
 ## Documentation URL
 ```
-https://documenter.getpostman.com/view/2108248/UVRHj3g3
+https://documenter.getpostman.com/view/2108248/UVRHjiwb
 
 ### Contact 
 * Email <ajobiewefemi@gmail.com>
