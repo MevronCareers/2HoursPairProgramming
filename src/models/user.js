@@ -12,8 +12,6 @@ const UserSchema = new mongoose.Schema(
       type: String,
       match:
         /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-      required: "Email is required",
-      unique: true,
     },
     role: {
       type: String,
@@ -25,16 +23,12 @@ const UserSchema = new mongoose.Schema(
       type: Boolean,
       default: true,
     },
-    dp: { type: String },
     password: {
       type: String,
       required: "Password is required",
       minlength: [8, "Password should be less than 8 characters"],
     },
-    firstName: {
-      type: String,
-    },
-    lastName: {
+    fullName: {
       type: String,
     },
     address: {
