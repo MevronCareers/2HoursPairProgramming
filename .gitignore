@@ -1,0 +1,8 @@
+.env
+./.env
+access.log
+./access.log
+/node_modules
+package-lock.json
+
+https://github.com/MevronCareers/2HoursPairProgramming.git
