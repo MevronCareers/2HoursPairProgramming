@@ -7,7 +7,6 @@ const db = require("./src/config/db");
 const routes = require("./src/routes/index");
 const morgan = require("morgan");
 const http = require("http");
-
 db();
 app.use(cors());
 app.use(morgan("dev"));
