@@ -46,8 +46,8 @@ const UserSchema = new mongoose.Schema(
     dateOfBirth: {
       type: Date,
     },
-    verifiedEmail: { type: Boolean, default: false },
-    verifyMailToken: { token: String, expires: Date },
+    verifiedPhone: { type: Boolean, default: false },
+    verifySMSToken: { token: String, expires: Date },
     created: {
       type: Date,
       default: Date.now(),
