@@ -8,6 +8,14 @@ const bcrypt = require("bcryptjs");
 //  Create User
 const createPhone = async (req, res) => {
   try {
+    const schema = Joi.object({
+      phone: Joi.string().required().min(10),
+    });
+    const { error } = schema.validate(req.body);
+    if (error)
+      return res
+        .status(400)
+        .json({ err: error.details[0].message, status: "failed" });
     const { phone } = req.body;
     let user = await User.findOne({ phone });
     if (user) {
