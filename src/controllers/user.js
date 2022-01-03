@@ -88,7 +88,7 @@ const addName = async (req, res) => {
         status: "failed",
       });
     }
-    if (!user.verifiedPhone) {
+    if (user.verifiedPhone == false) {
       return res.status(400).json({
         msg: "Phone Number yet to be verified.",
         status: "failed",
@@ -119,13 +119,13 @@ const addEmail = async (req, res) => {
         status: "failed",
       });
     }
-    if (!user.verifiedPhone) {
+    if (user.verifiedPhone == false) {
       return res.status(400).json({
         msg: "Phone Number yet to be verified.",
         status: "failed",
       });
     }
-    if (!user.fullName) {
+    if (user.fullName == false) {
       return res.status(400).json({
         msg: "Please add your Full Name.",
         status: "failed",
