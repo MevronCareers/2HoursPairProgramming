@@ -146,9 +146,23 @@ const addEmail = async (req, res) => {
   }
 };
 
+const getAllUsers = async (req, res) => {
+  try {
+    let users = await User.find();
+    return res.status(201).json({
+      msg: "Users fetched successfully",
+      data: { users },
+      status: "successful",
+    });
+  } catch (error) {
+    return res.status(500).json({ err: error.message });
+  }
+};
+
 module.exports = {
   createPhone,
   verifyPhone,
   addName,
   addEmail,
+  getAllUsers,
 };
